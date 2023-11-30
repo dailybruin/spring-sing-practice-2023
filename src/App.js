@@ -8,10 +8,12 @@ function App() {
   const [ data, setData ] = useState(null);
   
   useEffect(() => {
-		fetch("<TODO: insert api url here>")
-		.then(res => res.json())
-		.then(res => setData(res.data['article.aml']))
-  }, [])
+    fetch(
+      "https://kerckhoff.dailybruin.com/api/packages/flatpages/spring-sing-2023"
+    )
+      .then((res) => res.json())
+      .then((res) => setData(res.data["article.aml"]));
+  }, []);
 
   return data && (
     <div className="App">
